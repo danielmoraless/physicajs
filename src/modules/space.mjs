@@ -3,7 +3,8 @@ export default class Space extends Document {
         super();
         this.limitX = limitX || window.innerWidth - 15;
         this.limitY = limitY || window.innerHeight - 15;
-        this.ctx = this.#createSpace(this.limitX, this.limitY);
+        this.canvas = this.#createSpace(this.limitX, this.limitY);
+        this.ctx = this.canvas.getContext("2d");
     }
 
     #createSpace(w, h) {
@@ -15,12 +16,12 @@ export default class Space extends Document {
         let element = document.createElement("canvas");
         element.width = w;
         element.height = h;
-        element.style = "border: 1px solid black";
+        element.style = "border: 1px solid gray; background-color: black;";
         element.id = "space";
 
         d.appendChild(element);
         document.body.appendChild(d);
         
-        return element.getContext("2d");
+        return element;
     }
 }
