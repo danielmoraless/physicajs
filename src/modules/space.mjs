@@ -16,7 +16,7 @@ export default class Space extends Document {
         let element = document.createElement("canvas");
         element.width = w;
         element.height = h;
-        element.style = "border: 1px solid gray; background-color: black;";
+        element.style = "border: 1px solid gray; background-color: white;";
         element.id = "space";
 
         d.appendChild(element);
