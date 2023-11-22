@@ -12,7 +12,8 @@ export default class BasicShapes extends Document {
             filled=true
         } = {}) {
 
-        this.rctx.fillStyle, this.rctx.strokeStyle = color;
+        this.rctx.fillStyle = color;
+        this.rctx.strokeStyle = color;
 
         if (filled) {
             this.rctx.fillRect(pos.x, pos.y, wh, wh);
@@ -34,7 +35,8 @@ export default class BasicShapes extends Document {
         this.rctx.beginPath();
         this.rctx.arc(position.x, position.y, radius, startAngle, endAngle, cclockwise);
 
-        this.rctx.fillStyle, this.rctx.strokeStyle = color;
+        this.rctx.fillStyle = color;
+        this.rctx.strokeStyle = color;
 
         if (filled) {
             this.rctx.fill();
