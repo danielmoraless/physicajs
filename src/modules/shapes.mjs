@@ -6,7 +6,7 @@ export default class BasicShapes extends Document {
 
     makeSquare(
         {
-            color="black",
+            color="white",
             pos={x: 25, y: 25},
             wh=25,
             filled=true
@@ -22,7 +22,7 @@ export default class BasicShapes extends Document {
     }
 
     makeCircle({
-        color="black",
+        color="white",
         position={x:50, y:50},
         radius=25/2,
         startAngle=0,
