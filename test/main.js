@@ -1,5 +1,5 @@
-import Space from "../src/modules/space.mjs";
-import BasicShapes from "../src/modules/shapes.mjs";
+import Space from "../src/space.mjs";
+import BasicShapes from "../src/shapes.mjs";
 
 function main() {
     let ms = new Space();
