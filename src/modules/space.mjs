@@ -1,10 +1,12 @@
 export default class Space extends Document {
-    constructor(limitX, limitY) {
+    defaultBgColor = "#000000";
+    constructor(limitX, limitY, defaultBgColor) {
         super();
         this.limitX = limitX || window.innerWidth - 15;
         this.limitY = limitY || window.innerHeight - 15;
         this.canvas = this.#createSpace(this.limitX, this.limitY);
         this.ctx = this.canvas.getContext("2d");
+        this.defaultBgColor = defaultBgColor || "#000000";
     }
 
     #createSpace(w, h) {
@@ -16,7 +18,7 @@ export default class Space extends Document {
         let element = document.createElement("canvas");
         element.width = w;
         element.height = h;
-        element.style = "border: 1px solid gray; background-color: black;";
+        element.style = `border: 1px solid gray; background-color: ${this.defaultBgColor};`;
         element.id = "space";
 
         d.appendChild(element);

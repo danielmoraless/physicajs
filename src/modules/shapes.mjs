@@ -1,12 +1,14 @@
 export default class BasicShapes extends Document {
-    constructor(ctx) {
+    defaultColor = "#ffffff"
+    constructor(ctx, defaultColor) {
         super();
         this.rctx = ctx || document.getElementById("space").getContext("2d");
+        this.defaultColor = defaultColor || "#ffffff";
     }
 
     makeSquare(
         {
-            color="white",
+            color=this.defaultColor,
             pos={x: 25, y: 25},
             wh=25,
             filled=true
@@ -23,7 +25,7 @@ export default class BasicShapes extends Document {
     }
 
     makeCircle({
-        color="white",
+        color=this.defaultColor,
         position={x:50, y:50},
         radius=25/2,
         startAngle=0,
