@@ -17,10 +17,13 @@ export default class BasicShapes extends Document {
         this.rctx.fillStyle = color;
         this.rctx.strokeStyle = color;
 
+        let sPath = new Path2D();
+        sPath.rect(pos.x, pos.y, wh, wh);
+
         if (filled) {
-            this.rctx.fillRect(pos.x, pos.y, wh, wh);
+            this.rctx.fill(sPath);
         } else {
-            this.rctx.strokeRect(pos.x, pos.y, wh, wh);
+            this.rctx.stroke(sPath);
         }
     }
 
@@ -34,16 +37,16 @@ export default class BasicShapes extends Document {
         filled=true
     } = {}) {
 
-        this.rctx.beginPath();
-        this.rctx.arc(position.x, position.y, radius, startAngle, endAngle, cclockwise);
-
         this.rctx.fillStyle = color;
         this.rctx.strokeStyle = color;
 
+        let cPath = new Path2D();
+        cPath.arc(position.x, position.y, radius, startAngle, endAngle, cclockwise);
+
         if (filled) {
-            this.rctx.fill();
+            this.rctx.fill(cPath);
         } else {
-            thix.rctx.stroke();
+            thix.rctx.stroke(cPath);
         }
     }
 }
