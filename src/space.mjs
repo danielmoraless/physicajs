@@ -21,6 +21,8 @@ export default class Space extends Document {
         element.style = `border: 1px solid gray; background-color: ${this.defaultBgColor};`;
         element.id = "space";
 
+        element.getContext("2d").setTransform(1, 0, 0, -1, w/2, h/2);
+
         d.appendChild(element);
         document.body.appendChild(d);
         
